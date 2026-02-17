@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    overflow: hidden; /* Hide scrollbars */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #222;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+#game-container {
+    position: relative;
+    width: 800px; /* Game area width */
+    height: 600px; /* Game area height */
+    border: 2px solid white;
+    background-color: #333;
+    overflow: hidden;
+    cursor: crosshair; /* Change cursor to crosshair */
+}
+
+#player {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: lightblue;
+    border-radius: 50%; /* Make it a circle */
+    z-index: 10; /* Ensure player is on top */
+}
+
+.target {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border-radius: 50%;
+    animation: moveTarget 5s linear infinite alternate; /* Simple animation */
+    cursor: pointer;
+}
+
+@keyframes moveTarget {
+    from { transform: translateY(0); }
+    to { transform: translateY(550px); } /* Move from top to bottom */
+}
+
+#score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    z-index: 20;
+}
